@@ -9,6 +9,7 @@ A Spring Boot 4.0.5 / Java 21 simulation of a car rental system.
 
 ### Start
 ```bash
+cd CarRentalApp
 mvn clean spring-boot:run
 ```
 
