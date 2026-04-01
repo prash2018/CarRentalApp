@@ -1,9 +1,7 @@
 package com.carrental.enums;
 
-/**
- * The three car types supported by the rental system.
- * Demonstrates: ABSTRACTION — clients work with CarType, not concrete classes.
- */
+// The three car types supported by the rental system.
+// Demonstrates: ABSTRACTION — clients work with CarType, not concrete classes.
 public enum CarType {
     SEDAN,
     SUV,
