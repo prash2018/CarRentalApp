@@ -10,7 +10,6 @@ import java.math.BigDecimal;
 
 /*
   Sedan: up to 5 passengers, economy daily rate.
-  Demonstrates INHERITANCE and POLYMORPHISM.
  */
 @Entity
 @DiscriminatorValue("SEDAN CATEGORY")
