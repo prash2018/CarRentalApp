@@ -21,8 +21,6 @@ import java.util.List;
  *   vehicle.suv.count=5
  *   vehicle.van.count=3
  *
- * This satisfies the requirement: "the number of cars of each type is limited."
- * Changing the counts in properties changes the vehicle without touching code.
  */
 @Component
 @RequiredArgsConstructor
@@ -82,7 +80,7 @@ public class VehicleInitializer implements CommandLineRunner {
     @Override
     public void run(String @NonNull ... args) {
         if (carRepository.count() > 0)
-            return; // already initialized (test context)
+            return; 
 
         // Sedans
         for (int i = 0; i < sedanCount; i++) {
@@ -102,7 +100,7 @@ public class VehicleInitializer implements CommandLineRunner {
                     vanCarTypes.get(i).make, vanCarTypes.get(i).model, vanCarTypes.get(i).year));
         }
 
-        log.info("Vehicles initialised: {} Sedan(s), {} SUV(s), {} Van(s)",
+        log.info("Vehicles initialized: {} Sedan(s), {} SUV(s), {} Van(s)",
                 sedanCount, suvCount, vanCount);
     }
 }
