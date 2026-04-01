@@ -6,15 +6,7 @@ import lombok.*;
 
 import java.math.BigDecimal;
 
-/*
-  Abstract base class for all car types.
-
- OOP Principles applied:
-    ABSTRACTION  — clients program to Car, not to Sedan/SUV/Van
-    INHERITANCE  — Sedan, SUV, Van all extend abstract class Car
-    POLYMORPHISM — getDailyRate() and getPassengerCapacity() are overridden per car subtype
-    ENCAPSULATION — identity and type fields are immutable after construction
- */
+//  Abstract base class for all car types.
 @Entity
 @Table(name = "cars")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
@@ -47,22 +39,16 @@ public abstract class Car {
     private int year;
 
     // Polymorphic contract, child class implements these abstract methods
-    /**
-     * Returns the daily rental rate for this car type.
-     * Each subclass defines its own rate — POLYMORPHISM.
-     */
+    // Returns the daily rental rate for this car type.
+    // Each subclass defines its own rate — POLYMORPHISM.
     public abstract BigDecimal getDailyRentalRate();
 
-    /**
-     * Returns the maximum number of passengers.
-     * Each subclass defines its own capacity — POLYMORPHISM.
-     */
+    // Returns the maximum number of passengers.
+    // Each subclass defines its own capacity — POLYMORPHISM.
     public abstract int getCarPassengerCapacity();
 
-    /**
-     * Method to calculate total cost for a given number of days.
-     * Subclasses influence the result only by overriding getDailyRate().
-     */
+    // Method to calculate total cost for a given number of days.
+    // Subclasses influence the result only by overriding getDailyRate()
     public BigDecimal calculateTotalRentalCost(int days) {
         if (days <= 0)
             throw new IllegalArgumentException("Days must be positive.");
