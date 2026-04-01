@@ -11,8 +11,6 @@ import java.time.temporal.ChronoUnit;
 
 /*
   A Reservation binds a customer to a specific Car for a date/time window.
-
-  Business rules encapsulated here (ENCAPSULATION):
     - A reservation can only be cancelled while CONFIRMED
     - Total cost is derived from the car's polymorphic daily rate
     - Overlap rental detection uses [pickupDateTime, dropOffDateTime)
@@ -31,7 +29,7 @@ public class Reservation {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    // Customer name — kept simple; a real system would FK to a Customer entity.
+    // Customer name
     @Column(name = "customer_name", nullable = false)
     private String customerName;
 
@@ -69,12 +67,10 @@ public class Reservation {
         return pickupDateTime.plusDays(numberOfDays);
     }
 
-    /**
-     * Returns true when this reservation's window overlaps with [start, end).
-     * Used to enforce fleet limits when creating new reservations.
-     *
-     * Two windows overlap when: thisStart < otherEnd AND thisEnd > otherStart
-     */
+    // Returns true when this reservation's window overlaps with [start, end).
+    // Used for enforcing fleet limits when creating new reservations.
+    
+    // Two windows overlap when: thisStart < otherEnd AND thisEnd > otherStart
     public boolean overlapsWith(LocalDateTime start, LocalDateTime end) {
         return pickupDateTime.isBefore(end) && getDropOffDateTime().isAfter(start);
     }
