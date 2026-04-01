@@ -21,18 +21,9 @@ import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.List;
 
-/**
- *  Reservation logic.
- *
- * The number of CONFIRMED reservations overlapping any
- * given window must never exceed the total cars of that type in the fleet.
- *
- * OOP principles:
- *   SINGLE RESPONSIBILITY — only manages reservation lifecycle
- *   DEPENDENCY INJECTION  — repositories injected, not instantiated
- *   POLYMORPHISM          — car.getDailyRate() / car.calculateTotalCost() called
- *                           without knowing the concrete subtype
- */
+// Reservation logic.
+// The number of CONFIRMED reservations overlapping any
+// given window must never exceed the total cars of that type in the fleet.
 @Service
 @RequiredArgsConstructor
 @Slf4j
