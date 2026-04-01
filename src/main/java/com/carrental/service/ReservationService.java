@@ -8,10 +8,7 @@ import com.carrental.enums.CarType;
 import java.time.LocalDateTime;
 import java.util.List;
 
-/**
- * Reservation contract.
- * Demonstrates: ABSTRACTION — callers depend on the interface, not the implementation.
- */
+// Reservation contract
 public interface ReservationService {
 
     // Reserve a car of the given type at the requested date/time for numberOfDays.
