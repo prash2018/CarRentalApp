@@ -28,16 +28,16 @@ public class CarController {
                    
                    With ?pickupDateTime + ?numberOfDays: returns only cars free for that window.
                    
-                   Add ?type=SEDAN/SUV/VAN to narrow by car type.
+                   Add ?type=SEDAN/SUV/VAN to narrow search by car type.
                    
                    Examples:
                      GET /api/v1/cars
                    
                      GET /api/v1/cars?type=SUV
                    
-                     GET /api/v1/cars?pickupDateTime=2026-04-30T22:30 AM&numberOfDays=3
+                     GET /api/v1/cars?pickupDateTime=2026-04-30T22:30&numberOfDays=3
                    
-                     GET /api/v1/cars?type=VAN&pickupDateTime=2026-04-30T22:30 AM&numberOfDays=3
+                     GET /api/v1/cars?type=VAN&pickupDateTime=2026-04-30T22:30&numberOfDays=3
                    
                    """)
     public ResponseEntity<List<CarResponse>> getCars(
